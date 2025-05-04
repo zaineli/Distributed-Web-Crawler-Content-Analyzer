@@ -1,0 +1,4 @@
+/venv
+*.zip
+/aws
+*/pycache
