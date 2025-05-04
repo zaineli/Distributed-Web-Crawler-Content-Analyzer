@@ -1,0 +1,16 @@
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:ap-south-1:746669208938:repository/scraper",
+        "registryId": "746669208938",
+        "repositoryName": "scraper",
+        "repositoryUri": "746669208938.dkr.ecr.ap-south-1.amazonaws.com/scraper",
+        "createdAt": "2025-05-06T21:07:51.967000+05:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
