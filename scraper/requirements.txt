@@ -1,0 +1,8 @@
+boto3
+python-dotenv
+requests
+beautifulsoup4
+validators
+fastapi
+pydantic
+uvicorn
