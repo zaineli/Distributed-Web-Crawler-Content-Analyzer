@@ -35,13 +35,12 @@ flowchart LR
 
 | Component          | Technology                          |
 |--------------------|-------------------------------------|
-| **Frontend**       | React.js (Optional)                 |
+| **Frontend**       | React.js                            |
 | **Backend API**    | FastAPI (Python)                    |
 | **Queue Service**  | Amazon SQS (Standard Queue)         |
 | **Compute**        | AWS ECS Fargate                     |
 | **Storage**        | Amazon S3 (Standard Storage)        |
 | **Monitoring**     | AWS CloudWatch                      |
-| **Infrastructure** | AWS CDK/Terraform (Recommended)     |
 | **Scraping**       | BeautifulSoup4, Requests            |
 
 
