@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Script to commit and push changes one file at a time
-# Distributing 23 commits across May 4-10, 2025
+# Distributing 18 commits across May 4-10, 2025
 
 # Array of changed files (replace these with actual changed files)
 changed_files=($(git ls-files --modified --others --exclude-standard))
 
-# Check if we have exactly 23 files
-if [ ${#changed_files[@]} -ne 23 ]; then
-    echo "Warning: Found ${#changed_files[@]} files instead of 23. Proceeding anyway."
+# Check if we have exactly 18 files
+if [ ${#changed_files[@]} -ne 18 ]; then
+    echo "Warning: Found ${#changed_files[@]} files instead of 18. Proceeding anyway."
 fi
 
 # Commit messages variations
@@ -92,7 +92,7 @@ for date_index in $(seq 0 $((${#dates[@]}-1))); do
         file_index=$((file_index + 1))
         
         # Random sleep between commits (1-5 minutes) to simulate natural timing
-        sleep_time=$((RANDOM % 300 + 60))
+        sleep_time=$((60))
         echo "Waiting $sleep_time seconds before next commit..."
         sleep $sleep_time
     done
