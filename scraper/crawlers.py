@@ -4,7 +4,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 
-def crawl_single_site(site):
+def crawl_single_site(site, prefix='output'):
     """Crawl a single website and save the output"""
     # site = "https://example.com"
     
@@ -21,7 +21,7 @@ def crawl_single_site(site):
     # Create a domain-specific output folder
     from urllib.parse import urlparse
     domain = urlparse(site).netloc
-    output_dir = f"output/{domain}"
+    output_dir = f"{prefix}/{domain}"
     
     # Create and configure the crawler
     crawler = WebCrawler(**base_config)
@@ -30,7 +30,7 @@ def crawl_single_site(site):
     crawler.crawl(site, output_dir)
     
     print(f"Crawled {len(crawler.crawled_urls)} pages from {site}.")
-    print("Crawling complete!")
+
 
 def batch_crawl_multiple_sites(sites):
     """Crawl multiple websites in sequence"""
@@ -39,32 +39,11 @@ def batch_crawl_multiple_sites(sites):
     #     "https://wikipedia.org",
     #     "https://python.org"
     # ]
-    
-    # Create a base configuration for the crawler
-    base_config = {
-        "max_depth": 3,
-        "max_pages": 100,
-        "timeout": 10,
-        "delay": 1.0,
-        "respect_robots": False,
-        "threads": 5
-    }
-    
+
     # Process each site
     for site in sites:
         print(f"\nStarting crawl of {site}")
-        
-        # Create a domain-specific output folder
-        from urllib.parse import urlparse
-        domain = urlparse(site).netloc
-        output_dir = f"batch_output/{domain}"
-        
-        # Create and configure a new crawler for each site
-        crawler = WebCrawler(**base_config)
-        crawler.crawl(site, output_dir)
-        
-        print(f"Completed crawl of {site}. Crawled {len(crawler.crawled_urls)} pages.")
-    
+        crawl_single_site(site, 'batch_output')
     print("\nBatch crawling complete!")
 
 
